@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Página con JavaScript</title>
+    <title>Página con JavaScript y CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Números pares del 1 al 10</h1>
+
+    <ul id="numerosPares"></ul>
+
+    <script>
+        // Algoritmo con un ciclo (for) y condicional (if)
+        var listaNumerosPares = document.getElementById("numerosPares");
+
+        for (var i = 1; i <= 10; i++) {
+            if (i % 2 === 0) {
+                var nuevoElemento = document.createElement("li");
+                nuevoElemento.textContent = i;
+                listaNumerosPares.appendChild(nuevoElemento);
+            }
+        }
+    </script>
+</body>
+
+</html>
