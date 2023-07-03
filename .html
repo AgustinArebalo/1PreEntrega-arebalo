@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+<head>
+    <title>Simulación de Proceso JavaScript</title>
+    <script>
+        // Variables
+        var nombre = "";
+        var edad = 0;
+        var arrayNumeros = [2, 4, 6, 8, 10];
+
+        // Función para obtener la suma de un array de números
+        function obtenerSuma(array) {
+            var suma = 0;
+            for (var i = 0; i < array.length; i++) {
+                suma += array[i];
+            }
+            return suma;
+        }
+
+        // Objeto Persona
+        var persona = {
+            nombre: "",
+            edad: 0,
+            saludar: function () {
+                alert("Hola, mi nombre es " + this.nombre + " y tengo " + this.edad + " años.");
+                console.log("Hola, mi nombre es " + this.nombre + " y tengo " + this.edad + " años.");
+            }
+        };
+
+        // Método de búsqueda en un array
+        function buscarNumero(array, numero) {
+            return array.includes(numero);
+        }
+
+        // Método de filtrado de un array
+        function filtrarNumerosPares(array) {
+            return array.filter(function (numero) {
+                return numero % 2 === 0;
+            });
+        }
+
+        // Lógica principal
+        function simularProceso() {
+            // Solicitar nombre y edad
+            nombre = prompt("Ingrese su nombre:");
+            edad = parseInt(prompt("Ingrese su edad:"));
+
+            // Saludar
+            persona.nombre = nombre;
+            persona.edad = edad;
+            persona.saludar();
+
+            // Obtener la suma del array de números
+            var suma = obtenerSuma(arrayNumeros);
+            alert("La suma de los números del array es: " + suma);
+            console.log("La suma de los números del array es: " + suma);
+
+            // Buscar un número en el array
+            var numeroBuscado = parseInt(prompt("Ingrese un número a buscar en el array:"));
+            var encontrado = buscarNumero(arrayNumeros, numeroBuscado);
+            if (encontrado) {
+                alert("El número " + numeroBuscado + " está en el array.");
+                console.log("El número " + numeroBuscado + " está en el array.");
+            } else {
+                alert("El número " + numeroBuscado + " no está en el array.");
+                console.log("El número " + numeroBuscado + " no está en el array.");
+            }
+
+            // Filtrar números pares del array
+            var numerosPares = filtrarNumerosPares(arrayNumeros);
+            alert("Los números pares del array son: " + numerosPares);
+            console.log("Los números pares del array son: " + numerosPares);
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="simularProceso()">Simular Proceso</button>
+</body>
+
+</html>
